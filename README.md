@@ -64,7 +64,7 @@ We conduct experiments on the **ISPRS Vaihingen** and **ISPRS Potsdam** datasets
 - [ISPRS Vaihingen](https://www.isprs.org/resources/datasets/benchmarks/UrbanSemLab/2d-sem-label-vaihingen.aspx)
 - [ISPRS Potsdam](https://www.isprs.org/resources/datasets/benchmarks/UrbanSemLab/2d-sem-label-potsdam.aspx)
 
-We prepare and organize both datasets following [GeoSeg](https://github.com/WangLibo1995/GeoSeg). Dataset paths and experimental settings are specified in `GeoSeg/config/`, while data loading and transformations are implemented in `GeoSeg/geoseg/datasets/`.
+We prepare and organize both datasets following [GeoSeg](https://github.com/WangLibo1995/GeoSeg). Dataset paths and experimental settings are specified in `GeoSeg/config/`, while data loading and transformations are implemented in `GeoSeg/tools/`.
 
 ## 🛠️ Installation
 
