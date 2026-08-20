@@ -11,5 +11,5 @@ In remote sensing image segmentation, regions with sharp intensity variations ca
 
 ## 🏗️ Architecture
 <p align="center">
-  <img src="framework.png" alt="PAFCNet Framework" width="100%">
+  <img src="Framework.png" alt="PAFCNet Framework" width="100%">
 </p>
