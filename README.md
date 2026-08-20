@@ -13,3 +13,54 @@ In remote sensing image segmentation, regions with sharp intensity variations ca
 <p align="center">
   <img src="Framework.png" alt="PAFCNet Framework" width="100%">
 </p>
+
+## 📁 Project Structure
+The repository is organized as follows:
+
+```text
+PAFCNet-main/ [Remote Sensing Segmentation Framework]
+├── data/                       # dataset
+│   ├── LoveDA/                 
+│   ├── potsdam/                
+│   └── vaihingen/              
+│
+├── fig_results/                # Experimental results and visualization
+│   ├── loveda/                 
+│   ├── potsdam/                
+│   └── vaihingen/              
+│
+├── GeoSeg/                     # Main source code package
+│   ├── config/                 # Configuration files
+│   └── geoseg/                 
+│       ├── datasets/           # Data loading and preprocessing modules
+│       ├── losses/             # Loss function implementations
+│       └── models/             # Model architectures and components
+│   ├── tools/                  # Execution scripts
+│   ├── loveda_test.py          
+│   ├── potsdam_test.py         
+│   ├── train_supervision.py    # Main training script
+│   └── vaihingen_test.py       # Vaihingen evaluation script
+│
+├── lightning_logs/             # PyTorch Lightning training logs
+│   ├── loveda/                 
+│   ├── potsdam/                
+│   └── vaihingen/              
+│
+├── model_weights/              # Trained model checkpoints
+│   ├── loveda/                 
+│   ├── potsdam/                
+│   └── vaihingen/              
+│
+├── README.md                   
+└── requirements.txt            # Python environment dependencies
+```
+---
+
+## 📥 Datasets and Data Preparation
+
+We conduct experiments on the **ISPRS Vaihingen** and **ISPRS Potsdam** datasets. The original datasets can be downloaded from their official websites:
+
+- [ISPRS Vaihingen](https://www.isprs.org/resources/datasets/benchmarks/UrbanSemLab/2d-sem-label-vaihingen.aspx)
+- [ISPRS Potsdam](https://www.isprs.org/resources/datasets/benchmarks/UrbanSemLab/2d-sem-label-potsdam.aspx)
+
+We prepare and organize both datasets following [GeoSeg](https://github.com/WangLibo1995/GeoSeg). Dataset paths and experimental settings are specified in `GeoSeg/config/`, while data loading and transformations are implemented in `GeoSeg/geoseg/datasets/`.
