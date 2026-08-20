@@ -1,4 +1,5 @@
 #  Physics-Aware Feature Calibration Network for Remote Sensing Image Segmentation
+[![DOI](https://img.shields.io/badge/DOI-10.1109%2FTGRS.2026.3725100-0077B5)](https://doi.org/10.1109/TGRS.2026.3725100) [![IEEE TGRS](https://img.shields.io/badge/IEEE-TGRS-F36C21)](https://ieeexplore.ieee.org/document/11658984) [![PDF Download](https://img.shields.io/badge/PDF-Download-EF4B35?logo=adobeacrobatreader&logoColor=white)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11658984)
 
 Junyi Wang, Guodong Fan<sup>&#42;</sup>, Jinjiang Li<br>
 <sup>&#42;</sup> Corresponding author.
@@ -64,3 +65,63 @@ We conduct experiments on the **ISPRS Vaihingen** and **ISPRS Potsdam** datasets
 - [ISPRS Potsdam](https://www.isprs.org/resources/datasets/benchmarks/UrbanSemLab/2d-sem-label-potsdam.aspx)
 
 We prepare and organize both datasets following [GeoSeg](https://github.com/WangLibo1995/GeoSeg). Dataset paths and experimental settings are specified in `GeoSeg/config/`, while data loading and transformations are implemented in `GeoSeg/geoseg/datasets/`.
+
+## 🛠️ Installation
+
+PAFCN is implemented in PyTorch. We recommend using Conda to create an isolated Python environment.
+
+```bash
+# Clone the repository
+git clone https://github.com/wangjunyi-1/PAFCN.git
+cd PAFCN
+
+# Create and activate the environment
+conda create -n pafcn python=3.8 -y
+conda activate pafcn
+
+# Install the required packages
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+## 🚀 Training and Evaluation
+
+Dataset-specific configurations are provided under `GeoSeg/config/`.
+
+### Training
+
+```bash
+# Train on the Vaihingen dataset
+python GeoSeg/train_supervision.py \
+    -c GeoSeg/config/vaihingen/pafcnet.py
+
+# Train on the Potsdam dataset
+python GeoSeg/train_supervision.py \
+    -c GeoSeg/config/potsdam/pafcnet.py
+```
+
+### Evaluation
+
+Before evaluation, ensure that the checkpoint information in the corresponding configuration file is correctly specified.
+
+```bash
+# Evaluate on the Vaihingen dataset
+python GeoSeg/vaihingen_test.py \
+    -c GeoSeg/config/vaihingen/pafcnet.py \
+    -o fig_results/vaihingen/pafcnet \
+    -t d4 \
+    --rgb
+
+# Evaluate on the Potsdam dataset
+python GeoSeg/potsdam_test.py \
+    -c GeoSeg/config/potsdam/pafcnet.py \
+    -o fig_results/potsdam/pafcnet \
+    -t d4 \
+    --rgb
+```
+
+The `-t d4` option enables test-time augmentation, while `--rgb` saves colorized segmentation results.
+
+## 🙏 Acknowledgement
+
+This project is built upon [SFFNet](https://github.com/yysdck/SFFNet) and [UNetFormer (GeoSeg)](https://github.com/WangLibo1995/GeoSeg), with [Optuna](https://github.com/optuna/optuna) used for hyperparameter optimization. We sincerely thank the authors and contributors for their excellent work and for making their code publicly available.
