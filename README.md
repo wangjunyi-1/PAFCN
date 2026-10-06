@@ -1,8 +1,7 @@
 #  Physics-Aware Feature Calibration Network for Remote Sensing Image Segmentation
 [![DOI](https://img.shields.io/badge/DOI-10.1109%2FTGRS.2026.3725100-0077B5)](https://doi.org/10.1109/TGRS.2026.3725100) [![IEEE TGRS](https://img.shields.io/badge/IEEE-TGRS-F36C21)](https://ieeexplore.ieee.org/document/11658984) [![PDF Download](https://img.shields.io/badge/PDF-Download-EF4B35?logo=adobeacrobatreader&logoColor=white)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11658984)
 
-Junyi Wang, Guodong Fan<sup>&#42;</sup>, Jinjiang Li<br>
-<sup>&#42;</sup> Corresponding author.
+
 
 ## 📚 Introduction
 Official implementation of **PAFCNet**, a physics-aware feature calibration network designed for remote sensing image segmentation.
